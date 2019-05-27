@@ -34,13 +34,6 @@ Used parameters:
 ask Cem: function daha once tanimlanmis bir variable'i kullanabilir mi def in icersinde? Attribute olarak yazmaya gerek yok gibi duruyor?
 Hangi durumlarda yaziyoruz? output olarak degismesi/devamliligi olmasi gereken durumlarda di mi?
 
-things to add: 1- (ask cem) make it more efficient using classes, use the shared properties of conditions
-               2- (in progress) ask whether we should consider adding lifetime to stationary dots
-               3- (done) data handling is problematic, def function & data saving method is not working together
-               4- add a paragraph describing taxonomy of response box and key presses
-               5- (done) circular shape for every motion types - applied GratingStim (with inverse circle masked) at posX and -posX
-               6- motionTypes are defined for bothStatic condition as well, incognito. Balanced distribution is violated. 
-                   find a way to shorten the motionList but also dont feed that list to S condition
 
 # nSets*nBlocks #nBlock = 4, nMotions = 6, here we will have 6*4*6 = 144 (each motion lasts 2 seconds, totaling 244 seconds
 #print(numpy.ravel(motionList))
