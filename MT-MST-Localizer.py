@@ -16,7 +16,7 @@ import csv
 
 Localizer program in python to locate MT+, MST, MST separately using dot motion fields.
 
-Program description: MT localizer using four conditions (1 set in code language) 
+Program description: MT localizer use four conditions (in this program it is called "a set") 
                     each lasting 12 seconds totaling 48 seconds (TR = 2.000 ms). 
 
 Program terminology: 
@@ -30,10 +30,6 @@ Used parameters:
     6 sets of 4 conditions lasting 288 seconds, 144 TR
     24 seconds of initial blank, 12 TR
     totaling 156 TR (number of slices)
-
-ask Cem: function daha once tanimlanmis bir variable'i kullanabilir mi def in icersinde? Attribute olarak yazmaya gerek yok gibi duruyor?
-Hangi durumlarda yaziyoruz? output olarak degismesi/devamliligi olmasi gereken durumlarda di mi?
-
 
 # nSets*nBlocks #nBlock = 4, nMotions = 6, here we will have 6*4*6 = 144 (each motion lasts 2 seconds, totaling 244 seconds
 #print(numpy.ravel(motionList))
@@ -171,8 +167,6 @@ def polarDotMove(dotsRadius, dotsTheta, rotDots, speed, deathDots, moveSign, mot
     thetaX, radiusY = pol2cart(dotsTheta, dotsRadius)
     rotDots.setXYs(numpy.array([thetaX, radiusY]).transpose())
     
-
-
 def BothStaticDots(dotsRadius, dotsTheta, transDots, rotDots, randDots, speed, targetSide, motionList_for_block):
     ''' function for the block that presents stationary dots at periphery '''
     
@@ -240,7 +234,6 @@ def BothStaticDots(dotsRadius, dotsTheta, transDots, rotDots, randDots, speed, t
             else:
                 response = None
                 responses.append(response)
-
 
 def BothMovingDots(dotsRadius, dotsTheta, transDots, rotDots, randDots, speed, targetSide, motionList_for_block):
     ''' function for a block where both sides at the periphery moves '''
@@ -343,7 +336,6 @@ def BothMovingDots(dotsRadius, dotsTheta, transDots, rotDots, randDots, speed, t
             else:
                 response = None
                 responses.append(response)
-
 
 def LeftMovingDots(dotsRadius, dotsTheta, transDots, rotDots, randDots, speed, targetSide, motionList):
     ''' function for initiating movement at one and SINGLE location at either side (left or right) at the periphery 
@@ -448,7 +440,6 @@ def LeftMovingDots(dotsRadius, dotsTheta, transDots, rotDots, randDots, speed, t
         m1 = time.time()
         motionTime = m1-m0
         print "motion Time was:", motionTime
-
 
 #List Creation
 motionTypes = ['transVertical'], ['transHorizontal'], ['angular'], ['radial']
